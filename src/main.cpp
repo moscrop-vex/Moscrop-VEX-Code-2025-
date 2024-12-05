@@ -23,9 +23,14 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
+        DigitalOutH.set(true);
         pros::lcd::initialize();
-
         pros::lcd::register_btn1_cb(on_center_button);
+
+        Pneumatic.extend(pn1);
+
+        pn1.extend();
+
 }
 
 /**
@@ -72,6 +77,9 @@ void autonomous() {}
  * operator control task will be stopped. Re-enabling the robot will restart the
  * task, not resume it from where it left off.
  */
+
+void initClamp() {
+
 void opcontrol() {
         pros::Controller master(pros::E_CONTROLLER_MASTER);
         pros::MotorGroup left_mg({1, 2, 3});

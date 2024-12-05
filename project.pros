@@ -256,7 +256,8 @@
     },
     "upload_options": {
       "description": "Moscrop 2025 Code Project",
-      "after": "run"
+      "after": "none",
+      "icon": "pizza"
     },
     "use_early_access": false
   }
