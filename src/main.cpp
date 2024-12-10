@@ -1,5 +1,15 @@
 #include "main.h"
 
+pros::Controller master(pros::E_CONTROLLER_MASTER);
+
+pros::ADIDigitalOut piston('H');
+
+pros::MotorGroup left_mg({1, 2, 3});
+pros::MotorGroup right_mg({4, 5, 6});
+
+bool pistonState = false;
+int leftmove, rightmove;
+
 /**
  * A callback function for LLEMU's center button.
  *
@@ -7,30 +17,27 @@
  * "I was pressed!" and nothing.
  */
 void on_center_button() {
+        /*
         static bool pressed = false;
         pressed = !pressed;
         if (pressed) {
                 pros::lcd::set_text(2, "I was pressed!");
         } else {
                 pros::lcd::clear_line(2);
-        }
+        }*/
 }
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
- * All other competition modes are blocked by initialize; it is recommended
+ * All other competitiocd::clear_line(2);
+        }n modes are blocked by initialize; it is recommended
  * to keep execution time for this mode under a few seconds.
  */
+
 void initialize() {
-        DigitalOutH.set(true);
         pros::lcd::initialize();
-        pros::lcd::register_btn1_cb(on_center_button);
-
-        Pneumatic.extend(pn1);
-
-        pn1.extend();
-
+        // pros::lcd::register_btn1_cb(on_center_button);
 }
 
 /**
@@ -78,54 +85,20 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 
-void initClamp() {
-
 void opcontrol() {
-        pros::Controller master(pros::E_CONTROLLER_MASTER);
-        pros::MotorGroup left_mg({1, 2, 3});
-        pros::MotorGroup right_mg({4, 5, 6});
-
-
         while (true) {
-                pros::lcd::print(0, "%d %d %d", 
-                                (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
-                                (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
-                                (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);  // Prints status of the emulated screen LCDs
+                if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
+                        pistonState = !pistonState;
+                        piston.set_value(pistonState);
+                }
 
                 // Arcade control scheme
-                int leftmove = -1 * master.get_analog(ANALOG_LEFT_Y);    // Gets amount forward/backward from left joystick
-                int rightmove = master.get_analog(ANALOG_RIGHT_Y);  // Gets the turn left/right from right joystick
-                left_mg.move(leftmove);                      // Sets left motor voltage
-                right_mg.move(rightmove);                     // Sets right motor voltage
-                pros::delay(20);                               // Run for 20 ms then update
+                leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
+                rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
 
+                left_mg.move(leftmove);                                 // Sets left motor voltage
+                right_mg.move(rightmove);                               // Sets right motor voltage
 
-//---------------------------------------------------------------------------
-// Define the motors (set the correct port numbers)
-/*
-
-void opcontrol() {
-    while (true) {
-        // Get joystick values
-        int leftSpeed = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-        int rightSpeed = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y);
-
-        // Set motor speeds
-        leftMotor1.move(leftSpeed);
-        leftMotor2.move(leftSpeed);
-        leftMotor3.move(leftSpeed);
-
-        rightMotor1.move(rightSpeed);
-        rightMotor2.move(rightSpeed);
-        rightMotor3.move(rightSpeed);
-
-        // Delay to prevent overwhelming the CPU
-        pros::delay(20);
-    }
-}*/
-
-
-
-
+                pros::delay(20);                                        // Run for 20 ms then update
         }
 }
