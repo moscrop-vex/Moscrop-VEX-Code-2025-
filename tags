@@ -4,7 +4,7 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/school/Downloads/PROS Vex/Vex V5/	//
+!_TAG_PROC_CWD	/home/jimc/Documents/PROS Vex/Vex V5/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -35,85 +35,48 @@ $(MONOLITH_ELF)	common.mk	/^$(MONOLITH_ELF): $(ELF_DEPS) $(LIBRARIES)$/;"	t
 .sbss2	firmware/v5-common.ld	/^.sbss2 : {$/;"	S
 .sdata2	firmware/v5-common.ld	/^.sdata2 : {$/;"	S
 .text	firmware/v5-common.ld	/^.text : {$/;"	S
-0	.vscode/c_cpp_properties.json	/^          "c:\\\\Users\\\\marti\\\\Downloads\\\\PROS Vex\\\\Vex V5"$/;"	s	array:configurations.0.browse.path
+0	.vscode/c_cpp_properties.json	/^          "\/home\/jimc\/Documents\/PROS Vex\/Vex V5"$/;"	s	array:configurations.0.browse.path
 0	.vscode/c_cpp_properties.json	/^        "${workspaceFolder}\/**",$/;"	s	array:configurations.0.includePath
 0	.vscode/c_cpp_properties.json	/^        "_DEBUG",$/;"	s	array:configurations.0.defines
 0	.vscode/c_cpp_properties.json	/^    {$/;"	o	array:configurations
 0	compile_commands.json	/^            "clang++",$/;"	s	array:0.arguments
-0	compile_commands.json	/^            "clang++",$/;"	s	array:1.arguments
 0	compile_commands.json	/^    {$/;"	o
 1	.vscode/c_cpp_properties.json	/^        "UNICODE",$/;"	s	array:configurations.0.defines
-1	.vscode/c_cpp_properties.json	/^        "c:\\\\Users\\\\marti\\\\Downloads\\\\PROS Vex\\\\Vex V5\\\\include"$/;"	s	array:configurations.0.includePath
+1	.vscode/c_cpp_properties.json	/^        "c:\\\\Users\\\\marti\\\\Downloads\\\\PROS Vex\\\\Vex V5\\\\include",$/;"	s	array:configurations.0.includePath
 1	compile_commands.json	/^            "-c",$/;"	s	array:0.arguments
-1	compile_commands.json	/^            "-c",$/;"	s	array:1.arguments
-1	compile_commands.json	/^    {$/;"	o
-10	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-10	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
-11	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-11	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
-12	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-12	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
-13	compile_commands.json	/^            "-iquote.\/include",$/;"	s	array:0.arguments
-13	compile_commands.json	/^            "-iquote.\/include",$/;"	s	array:1.arguments
-14	compile_commands.json	/^            "-iquote.\/include\/.\/",$/;"	s	array:0.arguments
-14	compile_commands.json	/^            "-iquote.\/include\/.\/",$/;"	s	array:1.arguments
-15	compile_commands.json	/^            "-mcpu=cortex-a9",$/;"	s	array:0.arguments
-15	compile_commands.json	/^            "-mcpu=cortex-a9",$/;"	s	array:1.arguments
-16	compile_commands.json	/^            "-mfpu=neon-fp16",$/;"	s	array:0.arguments
-16	compile_commands.json	/^            "-mfpu=neon-fp16",$/;"	s	array:1.arguments
-17	compile_commands.json	/^            "-mfloat-abi=softfp",$/;"	s	array:0.arguments
-17	compile_commands.json	/^            "-mfloat-abi=softfp",$/;"	s	array:1.arguments
-18	compile_commands.json	/^            "-Os",$/;"	s	array:0.arguments
-18	compile_commands.json	/^            "-Os",$/;"	s	array:1.arguments
-19	compile_commands.json	/^            "-g",$/;"	s	array:0.arguments
-19	compile_commands.json	/^            "-g",$/;"	s	array:1.arguments
+10	compile_commands.json	/^            "-iquote.\/include",$/;"	s	array:0.arguments
+11	compile_commands.json	/^            "-iquote.\/include\/.\/",$/;"	s	array:0.arguments
+12	compile_commands.json	/^            "-mcpu=cortex-a9",$/;"	s	array:0.arguments
+13	compile_commands.json	/^            "-mfpu=neon-fp16",$/;"	s	array:0.arguments
+14	compile_commands.json	/^            "-mfloat-abi=softfp",$/;"	s	array:0.arguments
+15	compile_commands.json	/^            "-Os",$/;"	s	array:0.arguments
+16	compile_commands.json	/^            "-g",$/;"	s	array:0.arguments
+17	compile_commands.json	/^            "-D_POSIX_THREADS",$/;"	s	array:0.arguments
+18	compile_commands.json	/^            "-D_UNIX98_THREAD_MUTEX_ATTRIBUTES",$/;"	s	array:0.arguments
+19	compile_commands.json	/^            "-D_POSIX_TIMERS",$/;"	s	array:0.arguments
+2	.vscode/c_cpp_properties.json	/^        "\/home\/school\/Documents\/PROS Vex\/Vex V5\/include",$/;"	s	array:configurations.0.includePath
 2	.vscode/c_cpp_properties.json	/^        "_UNICODE"$/;"	s	array:configurations.0.defines
 2	compile_commands.json	/^            "-target",$/;"	s	array:0.arguments
-2	compile_commands.json	/^            "-target",$/;"	s	array:1.arguments
-20	compile_commands.json	/^            "-D_POSIX_THREADS",$/;"	s	array:0.arguments
-20	compile_commands.json	/^            "-D_POSIX_THREADS",$/;"	s	array:1.arguments
-21	compile_commands.json	/^            "-D_UNIX98_THREAD_MUTEX_ATTRIBUTES",$/;"	s	array:0.arguments
-21	compile_commands.json	/^            "-D_UNIX98_THREAD_MUTEX_ATTRIBUTES",$/;"	s	array:1.arguments
-22	compile_commands.json	/^            "-D_POSIX_TIMERS",$/;"	s	array:0.arguments
-22	compile_commands.json	/^            "-D_POSIX_TIMERS",$/;"	s	array:1.arguments
-23	compile_commands.json	/^            "-D_POSIX_MONOTONIC_CLOCK",$/;"	s	array:0.arguments
-23	compile_commands.json	/^            "-D_POSIX_MONOTONIC_CLOCK",$/;"	s	array:1.arguments
-24	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_H",$/;"	s	array:0.arguments
-24	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_H",$/;"	s	array:1.arguments
-25	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_HPP",$/;"	s	array:0.arguments
-25	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_HPP",$/;"	s	array:1.arguments
-26	compile_commands.json	/^            "-Wno-psabi",$/;"	s	array:0.arguments
-26	compile_commands.json	/^            "-Wno-psabi",$/;"	s	array:1.arguments
-27	compile_commands.json	/^            "-ffunction-sections",$/;"	s	array:0.arguments
-27	compile_commands.json	/^            "-ffunction-sections",$/;"	s	array:1.arguments
-28	compile_commands.json	/^            "-fdata-sections",$/;"	s	array:0.arguments
-28	compile_commands.json	/^            "-fdata-sections",$/;"	s	array:1.arguments
-29	compile_commands.json	/^            "-fdiagnostics-color",$/;"	s	array:0.arguments
-29	compile_commands.json	/^            "-fdiagnostics-color",$/;"	s	array:1.arguments
+20	compile_commands.json	/^            "-D_POSIX_MONOTONIC_CLOCK",$/;"	s	array:0.arguments
+21	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_H",$/;"	s	array:0.arguments
+22	compile_commands.json	/^            "-D_PROS_INCLUDE_LIBLVGL_LLEMU_HPP",$/;"	s	array:0.arguments
+23	compile_commands.json	/^            "-Wno-psabi",$/;"	s	array:0.arguments
+24	compile_commands.json	/^            "-ffunction-sections",$/;"	s	array:0.arguments
+25	compile_commands.json	/^            "-fdata-sections",$/;"	s	array:0.arguments
+26	compile_commands.json	/^            "-fdiagnostics-color",$/;"	s	array:0.arguments
+27	compile_commands.json	/^            "-funwind-tables",$/;"	s	array:0.arguments
+28	compile_commands.json	/^            "--std=gnu++20",$/;"	s	array:0.arguments
+29	compile_commands.json	/^            "-o",$/;"	s	array:0.arguments
+3	.vscode/c_cpp_properties.json	/^        "\/home\/jimc\/Documents\/PROS Vex\/Vex V5\/include"$/;"	s	array:configurations.0.includePath
 3	compile_commands.json	/^            "armv7ar-none-none-eabi",$/;"	s	array:0.arguments
-3	compile_commands.json	/^            "armv7ar-none-none-eabi",$/;"	s	array:1.arguments
-30	compile_commands.json	/^            "-funwind-tables",$/;"	s	array:0.arguments
-30	compile_commands.json	/^            "-funwind-tables",$/;"	s	array:1.arguments
-31	compile_commands.json	/^            "--std=gnu++20",$/;"	s	array:0.arguments
-31	compile_commands.json	/^            "--std=gnu++20",$/;"	s	array:1.arguments
-32	compile_commands.json	/^            "-o",$/;"	s	array:0.arguments
-32	compile_commands.json	/^            "-o",$/;"	s	array:1.arguments
-33	compile_commands.json	/^            "bin\/main.cpp.o",$/;"	s	array:0.arguments
-33	compile_commands.json	/^            "bin\/main.cpp.o",$/;"	s	array:1.arguments
-34	compile_commands.json	/^            "src\\\\main.cpp"$/;"	s	array:0.arguments
-34	compile_commands.json	/^            "src\\\\main.cpp"$/;"	s	array:1.arguments
-4	compile_commands.json	/^            "-fno-ms-extensions",$/;"	s	array:0.arguments
-4	compile_commands.json	/^            "-fno-ms-extensions",$/;"	s	array:1.arguments
-5	compile_commands.json	/^            "-fno-ms-compatibility",$/;"	s	array:0.arguments
-5	compile_commands.json	/^            "-fno-ms-compatibility",$/;"	s	array:1.arguments
-6	compile_commands.json	/^            "-fno-delayed-template-parsing",$/;"	s	array:0.arguments
-6	compile_commands.json	/^            "-fno-delayed-template-parsing",$/;"	s	array:1.arguments
-7	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-7	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
-8	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-8	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
-9	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:0.arguments
-9	compile_commands.json	/^            "-isystemc:\\\\users\\\\marti\\\\appdata\\\\roaming\\\\code\\\\user\\\\globalstorage/;"	s	array:1.arguments
+30	compile_commands.json	/^            "bin\/main.cpp.o",$/;"	s	array:0.arguments
+31	compile_commands.json	/^            "src\/main.cpp"$/;"	s	array:0.arguments
+4	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
+5	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
+6	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
+7	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
+8	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
+9	compile_commands.json	/^            "-isystem\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\/pr/;"	s	array:0.arguments
 ADI_ANALOG_IN	include/pros/adi.h	/^#define ADI_ANALOG_IN /;"	d
 ADI_ANALOG_OUT	include/pros/adi.h	/^#define ADI_ANALOG_OUT /;"	d
 ADI_DIGITAL_IN	include/pros/adi.h	/^#define ADI_DIGITAL_IN /;"	d
@@ -526,6 +489,7 @@ INCDIR	Makefile	/^INCDIR=$(ROOT)\/include$/;"	m
 INCLUDE	common.mk	/^INCLUDE=$(foreach dir,$(INCDIR) $(EXTRA_INCDIR),-iquote"$(dir)")$/;"	m
 INPUT	include/pros/adi.h	/^#define INPUT /;"	d
 INPUT_ANALOG	include/pros/adi.h	/^#define INPUT_ANALOG /;"	d
+INTAKE_SPEED	src/main.cpp	/^constexpr unsigned int INTAKE_SPEED = 50;$/;"	v	typeref:typename:unsigned int
 INTERNAL_ADI_PORT	include/pros/adi.h	/^#define INTERNAL_ADI_PORT /;"	d
 IS_LIBRARY	Makefile	/^IS_LIBRARY:=0$/;"	m
 Imu	include/pros/imu.hpp	/^	Imu(const Device& device) : Imu(device.get_port()){};$/;"	f	class:pros::v5::Imu
@@ -2441,6 +2405,7 @@ MOTOR_GEAR_600	include/pros/motors.h	/^#define MOTOR_GEAR_600 /;"	d
 MOTOR_GEAR_BLUE	include/pros/motors.h	/^#define MOTOR_GEAR_BLUE /;"	d
 MOTOR_GEAR_GREEN	include/pros/motors.h	/^#define MOTOR_GEAR_GREEN /;"	d
 MOTOR_GEAR_RED	include/pros/motors.h	/^#define MOTOR_GEAR_RED /;"	d
+Moscrop-VEX-Code-2025-	README.md	/^# Moscrop-VEX-Code-2025-/;"	c
 Motor	include/pros/adi.hpp	/^class Motor : private Port {$/;"	c	namespace:pros::adi
 Motor	include/pros/motors.hpp	/^	Motor(const Device& device) : Motor(device.get_port()){};$/;"	f	class:pros::v5::Motor
 Motor	include/pros/motors.hpp	/^class Motor : public AbstractMotor, public Device {$/;"	c	namespace:pros::v5
@@ -3314,7 +3279,6 @@ area	include/liblvgl/widgets/lv_textarea.h	/^        lv_area_t area;            
 area_act	include/liblvgl/draw/lv_draw.h	/^    lv_area_t area_act;$/;"	m	struct:_lv_draw_layer_ctx_t	typeref:typename:lv_area_t
 area_full	include/liblvgl/draw/lv_draw.h	/^    lv_area_t area_full;$/;"	m	struct:_lv_draw_layer_ctx_t	typeref:typename:lv_area_t
 arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:0
-arguments	compile_commands.json	/^        "arguments": [$/;"	a	object:1
 asm_rule	common.mk	/^define asm_rule$/;"	m
 attached_cb	include/liblvgl/extra/others/fragment/lv_fragment.h	/^    void (*attached_cb)(lv_fragment_t * self);$/;"	m	struct:_lv_fragment_class_t	typeref:typename:void (*)(lv_fragment_t * self)
 auto_convert	include/liblvgl/extra/libs/png/lodepng.h	/^  unsigned auto_convert; \/*automatically choose output PNG color type. Default: true*\/$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
@@ -3540,7 +3504,7 @@ comment	include/liblvgl/extra/libs/gif/gifdec.h	/^    void (*comment)(struct gd_
 competition	include/pros/misc.hpp	/^namespace competition {$/;"	n	namespace:pros
 competition_initialize	src/main.cpp	/^void competition_initialize() {}$/;"	f	typeref:typename:void
 competition_status	include/pros/misc.h	/^} competition_status;$/;"	t	typeref:enum:__anonfdeb336d0103
-compilerPath	.vscode/c_cpp_properties.json	/^      "compilerPath": "c:\\\\Users\\\\marti\\\\AppData\\\\Roaming\\\\Code\\\\User\\\\globalStora/;"	s	object:configurations.0
+compilerPath	.vscode/c_cpp_properties.json	/^      "compilerPath": "\/home\/jimc\/.config\/Code\/User\/globalStorage\/sigbots.pros\/install\//;"	s	object:configurations.0
 composition	include/liblvgl/draw/sdl/lv_draw_sdl_priv.h	/^    SDL_Texture * composition;$/;"	m	struct:lv_draw_sdl_context_internals_t	typeref:typename:SDL_Texture *
 compression_method	include/liblvgl/extra/libs/png/lodepng.h	/^  unsigned compression_method;\/*compression method of the original file. Always 0.*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
 configurations	.vscode/c_cpp_properties.json	/^  "configurations": [$/;"	a
@@ -3664,8 +3628,7 @@ dir_d	include/liblvgl/misc/lv_fs.h	/^    void * dir_d;$/;"	m	struct:__anon2434fa
 dir_open_cb	include/liblvgl/misc/lv_fs.h	/^    void * (*dir_open_cb)(struct _lv_fs_drv_t * drv, const char * path);$/;"	m	struct:_lv_fs_drv_t	typeref:typename:void * (*)(struct _lv_fs_drv_t * drv,const char * path)
 dir_read_cb	include/liblvgl/misc/lv_fs.h	/^    lv_fs_res_t (*dir_read_cb)(struct _lv_fs_drv_t * drv, void * rddir_p, char * fn);$/;"	m	struct:_lv_fs_drv_t	typeref:typename:lv_fs_res_t (*)(struct _lv_fs_drv_t * drv,void * rddir_p,char * fn)
 direct_mode	include/liblvgl/hal/lv_hal_disp.h	/^    uint32_t direct_mode : 1;        \/**< 1: Use screen-sized buffers and draw to absolute coor/;"	m	struct:_lv_disp_drv_t	typeref:typename:uint32_t:1
-directory	compile_commands.json	/^        "directory": "C:\\\\Users\\\\marti\\\\Downloads\\\\PROS Vex\\\\Vex V5",$/;"	s	object:1
-directory	compile_commands.json	/^        "directory": "c:\\\\Users\\\\marti\\\\Downloads\\\\PROS Vex\\\\Vex V5",$/;"	s	object:0
+directory	compile_commands.json	/^        "directory": "\/home\/jimc\/Documents\/PROS Vex\/Vex V5",$/;"	s	object:0
 disabled	include/liblvgl/hal/lv_hal_indev.h	/^    uint8_t disabled : 1;$/;"	m	struct:_lv_indev_proc_t	typeref:typename:uint8_t:1
 disabled	src/main.cpp	/^void disabled() {}$/;"	f	typeref:typename:void
 disp	include/liblvgl/core/lv_theme.h	/^    struct _lv_disp_t * disp;$/;"	m	struct:_lv_theme_t	typeref:struct:_lv_disp_t *
@@ -3767,8 +3730,7 @@ fd	include/liblvgl/extra/libs/gif/gifdec.h	/^    lv_fs_file_t fd;$/;"	m	struct:g
 feedback_cb	include/liblvgl/hal/lv_hal_indev.h	/^    void (*feedback_cb)(struct _lv_indev_drv_t *, uint8_t);$/;"	m	struct:_lv_indev_drv_t	typeref:typename:void (*)(struct _lv_indev_drv_t *,uint8_t)
 ffmpeg_ctx	include/liblvgl/extra/libs/ffmpeg/lv_ffmpeg.h	/^    struct ffmpeg_context_s * ffmpeg_ctx;$/;"	m	struct:__anon1624a8af0108	typeref:struct:ffmpeg_context_s *
 fh	include/liblvgl/extra/libs/gif/gifdec.h	/^    uint16_t fx, fy, fw, fh;$/;"	m	struct:gd_GIF	typeref:typename:uint16_t
-file	compile_commands.json	/^        "file": "src\\\\main.cpp"$/;"	s	object:0
-file	compile_commands.json	/^        "file": "src\\\\main.cpp"$/;"	s	object:1
+file	compile_commands.json	/^        "file": "src\/main.cpp"$/;"	s	object:0
 file_d	include/liblvgl/misc/lv_fs.h	/^    void * file_d;$/;"	m	struct:__anon2434fa9e0508	typeref:typename:void *
 file_position	include/liblvgl/misc/lv_fs.h	/^    uint32_t file_position;$/;"	m	struct:__anon2434fa9e0408	typeref:typename:uint32_t
 filled	include/liblvgl/draw/sw/lv_draw_sw_gradient.h	/^    uint32_t        filled : 1;   \/**< Used to skip dithering in it if already done *\/$/;"	m	struct:_lv_gradient_cache_t	typeref:typename:uint32_t:1
@@ -3965,6 +3927,7 @@ input_range	include/liblvgl/extra/others/monkey/lv_monkey.h	/^    } input_range;
 instance	include/liblvgl/extra/others/fragment/lv_fragment.h	/^    lv_fragment_t * instance;$/;"	m	struct:_lv_fragment_managed_states_t	typeref:typename:lv_fragment_t *
 instance_size	include/liblvgl/core/lv_obj_class.h	/^    uint32_t instance_size : 16;$/;"	m	struct:_lv_obj_class_t	typeref:typename:uint32_t:16
 instance_size	include/liblvgl/extra/others/fragment/lv_fragment.h	/^    size_t instance_size;$/;"	m	struct:_lv_fragment_class_t	typeref:typename:size_t
+intake_mg	src/main.cpp	/^pros::MotorGroup intake_mg({8, 9});$/;"	v	typeref:typename:pros::MotorGroup
 intelliSenseMode	.vscode/c_cpp_properties.json	/^      "intelliSenseMode": "gcc-arm",$/;"	s	object:configurations.0
 interlace_method	include/liblvgl/extra/libs/png/lodepng.h	/^  unsigned interlace_method;  \/*interlace method of the original file: 0=none, 1=Adam7*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
 internals	include/liblvgl/draw/sdl/lv_draw_sdl.h	/^    struct lv_draw_sdl_context_internals_t * internals;$/;"	m	struct:__anon5c883fc90208	typeref:struct:lv_draw_sdl_context_internals_t *
@@ -4073,6 +4036,8 @@ left_class_mapping	include/liblvgl/font/lv_font_fmt_txt.h	/^    const uint8_t * 
 left_coord	include/pros/vision.h	/^	int16_t left_coord;$/;"	m	struct:pros::vision_object	typeref:typename:int16_t
 left_knob_area	include/liblvgl/widgets/lv_slider.h	/^    lv_area_t left_knob_area;$/;"	m	struct:__anonbee1af130208	typeref:typename:lv_area_t
 left_knob_focus	include/liblvgl/widgets/lv_slider.h	/^    uint8_t left_knob_focus : 1; \/*1: with encoder now the right knob can be adjusted*\/$/;"	m	struct:__anonbee1af130208	typeref:typename:uint8_t:1
+left_mg	src/main.cpp	/^pros::MotorGroup left_mg({1, 2, 3});                    \/\/ L motor smart ports$/;"	v	typeref:typename:pros::MotorGroup
+leftmove	src/main.cpp	/^int leftmove, rightmove;                                \/\/ Motor angular offset (?)$/;"	v	typeref:typename:int
 lemon_chiffon	include/pros/colors.hpp	/^  lemon_chiffon = 0x00FFFACD,$/;"	e	enum:pros::Color
 letter	include/liblvgl/misc/lv_fs.h	/^    char letter;$/;"	m	struct:_lv_fs_drv_t	typeref:typename:char
 letter_space	include/liblvgl/draw/lv_draw_label.h	/^    lv_coord_t letter_space;$/;"	m	struct:__anon12ada5340108	typeref:typename:lv_coord_t
@@ -4885,6 +4850,8 @@ physical_hor_res	include/liblvgl/hal/lv_hal_disp.h	/^    physical_hor_res;     \
 physical_ver_res	include/liblvgl/hal/lv_hal_disp.h	/^    physical_ver_res;     \/**< Vertical resolution of the full \/ physical display. Set to -1 f/;"	m	struct:_lv_disp_drv_t	typeref:typename:lv_coord_t
 pic_count	include/liblvgl/extra/widgets/animimg/lv_animimg.h	/^    int8_t  pic_count;$/;"	m	struct:__anon5a0775360108	typeref:typename:int8_t
 pink	include/pros/colors.hpp	/^  pink = 0x00FFC0CB,$/;"	e	enum:pros::Color
+piston	src/main.cpp	/^pros::adi::DigitalOut piston('H');                      \/\/ ADI port of Solenoid$/;"	v	typeref:typename:pros::adi::DigitalOut
+piston_state	src/main.cpp	/^bool piston_state = false;                              \/\/ true = extended$/;"	v	typeref:typename:bool
 pitch	include/pros/gps.h	/^	double pitch;$/;"	m	struct:pros::gps_orientation_s	typeref:typename:double
 pitch	include/pros/gps.h	/^	double pitch;$/;"	m	struct:pros::gps_status_s	typeref:typename:double
 pitch	include/pros/imu.h	/^	double pitch;$/;"	m	struct:pros::euler_s	typeref:typename:double
@@ -5086,6 +5053,8 @@ right	include/liblvgl/extra/libs/sjpg/tjpgd.h	/^	uint16_t right;		\/* Right end 
 right_class_cnt	include/liblvgl/font/lv_font_fmt_txt.h	/^    uint8_t right_class_cnt;$/;"	m	struct:__anondb72bccc0508	typeref:typename:uint8_t
 right_class_mapping	include/liblvgl/font/lv_font_fmt_txt.h	/^    const uint8_t * right_class_mapping;  \/*Map the glyph_ids to classes: index -> glyph_id -> /;"	m	struct:__anondb72bccc0508	typeref:typename:const uint8_t *
 right_knob_area	include/liblvgl/widgets/lv_slider.h	/^    lv_area_t right_knob_area;$/;"	m	struct:__anonbee1af130208	typeref:typename:lv_area_t
+right_mg	src/main.cpp	/^pros::MotorGroup right_mg({4, 5, 6});                   \/\/ R motor smart ports$/;"	v	typeref:typename:pros::MotorGroup
+rightmove	src/main.cpp	/^int leftmove, rightmove;                                \/\/ Motor angular offset (?)$/;"	v	typeref:typename:int
 roll	include/pros/gps.h	/^	double roll;$/;"	m	struct:pros::gps_orientation_s	typeref:typename:double
 roll	include/pros/gps.h	/^	double roll;$/;"	m	struct:pros::gps_status_s	typeref:typename:double
 roll	include/pros/imu.h	/^	double roll;$/;"	m	struct:pros::euler_s	typeref:typename:double

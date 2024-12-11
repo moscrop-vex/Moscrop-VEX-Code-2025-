@@ -1,5 +1,8 @@
 # Auxilliary files
 ctags
+tags
+TAGS
+etags
 
 # Compiled Object files
 *.o

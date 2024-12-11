@@ -1,13 +1,18 @@
 #include "main.h"
 
+constexpr unsigned int INTAKE_SPEED = 50;
+
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
-pros::ADIDigitalOut piston('H');                        // ADI port of Solenoid
+pros::adi::DigitalOut piston('H');                      // ADI port of Solenoid
 pros::MotorGroup left_mg({1, 2, 3});                    // L motor smart ports
 pros::MotorGroup right_mg({4, 5, 6});                   // R motor smart ports
 
-bool pistonState = false;                               // true = extended
+pros::MotorGroup intake_mg({8, 9});
+
+bool piston_state = false;                              // true = extended
 int leftmove, rightmove;                                // Motor angular offset (?)
+bool toggle = false;
 
 /**
  * A callback function for LLEMU's center button.
@@ -85,19 +90,27 @@ void autonomous() {}
  */
 
 void opcontrol() {
+        constexpr int loop_delay = 20;
+
         while (true) {
-                if (master.get_digital(DIGITAL_R2)) {
-                        pistonState = !pistonState;
-                        piston.set_value(pistonState);
+                if (master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2)) {
+                        if (!toggle) {
+                                piston_state = !piston_state;
+                                piston.set_value(piston_state);
+                        }
+                        toggle = true;
+                } else {
+                        toggle = false;
                 }
 
-                // Arcade control scheme
                 leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
                 rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
+
+                intake_mg.move(master.get_digital(DIGITAL_A) * INTAKE_SPEED);
 
                 left_mg.move(leftmove);                                 // Sets left motor voltage
                 right_mg.move(rightmove);                               // Sets right motor voltage
 
-                pros::delay(20);                                        // Run for 20 ms then update
+                pros::delay(loop_delay);                                // Run for ``loop_delay`` ms then update
         }
 }
