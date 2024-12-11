@@ -2,13 +2,12 @@
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
-pros::ADIDigitalOut piston('H');
+pros::ADIDigitalOut piston('H');                        // ADI port of Solenoid
+pros::MotorGroup left_mg({1, 2, 3});                    // L motor smart ports
+pros::MotorGroup right_mg({4, 5, 6});                   // R motor smart ports
 
-pros::MotorGroup left_mg({1, 2, 3});
-pros::MotorGroup right_mg({4, 5, 6});
-
-bool pistonState = false;
-int leftmove, rightmove;
+bool pistonState = false;                               // true = extended
+int leftmove, rightmove;                                // Motor angular offset (?)
 
 /**
  * A callback function for LLEMU's center button.
@@ -87,7 +86,7 @@ void autonomous() {}
 
 void opcontrol() {
         while (true) {
-                if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {
+                if (master.get_digital(DIGITAL_R2)) {
                         pistonState = !pistonState;
                         piston.set_value(pistonState);
                 }
