@@ -1,5 +1,7 @@
 #include "main.h"
 
+#define GAME_CONTROLLER_STYLE 1
+
 constexpr unsigned int INTAKE_SPEED = 50;
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
@@ -89,6 +91,20 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 
+void get_controller_input(int *leftmove, int *rightmove) {
+        constexpr float accel_offset = 1;
+        #if GAME_CONTROLLER_STYLE
+        *leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
+        *rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
+        #else
+        int vel = master.get_analog(ANALOG_LEFT_Y);
+        int rad = master.get_analog(ANALOG_RIGHT_X);
+
+        *leftmove = vel + rad * accel_offset;
+        *rightmove = vel - rad * accel_offset;
+        #endif
+}
+
 void opcontrol() {
         constexpr int loop_delay = 20;
 
@@ -102,9 +118,6 @@ void opcontrol() {
                 } else {
                         toggle = false;
                 }
-
-                leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
-                rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
 
                 intake_mg.move(master.get_digital(DIGITAL_A) * INTAKE_SPEED);
 
