@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define GAME_CONTROLLER_STYLE 1
+#define GAME_CONTROLLER_STYLE 0
 
 constexpr unsigned int INTAKE_SPEED = 50;
 
@@ -75,8 +75,13 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
+
+
+
 void autonomous() {
-        //move_forward(distance);
+        left_mg.move(1);
+        right_mg.move(-1);
+        pros::delay(1000);
 }
 
 /**
@@ -93,19 +98,45 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 
+int abs(int x) {
+        return (x < 0) ? -x : x;
+}
+
+int sign(int x) {
+        return (x < 0) ? -1 : 1;
+}
+
 void get_controller_input(int *leftmove, int *rightmove) {
         #if GAME_CONTROLLER_STYLE
         *leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
         *rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
         #else
-        constexpr float ACCEL_OFFSET = 1;
+        constexpr float ACCEL_OFFSET = 0.5;
 
         int vel = master.get_analog(ANALOG_LEFT_Y);
         int rad = master.get_analog(ANALOG_RIGHT_X);
 
-        *leftmove = vel + rad * ACCEL_OFFSET;
+        *leftmove = -(vel + rad * ACCEL_OFFSET);
         *rightmove = vel - rad * ACCEL_OFFSET;
+
+        if (abs(*leftmove) > 127) {
+                *rightmove = (*rightmove * 127) / abs(*leftmove);
+                *leftmove = 127 * sign(*leftmove);
+        }
+
+        if (abs(*rightmove) > 127) {
+                *leftmove = (*leftmove * 127) / abs(*rightmove);
+                *rightmove = 127 * sign(*rightmove);
+        }
+
         #endif
+}
+
+int curve_velocity(int velocity) {
+        /* Maps linear ouput to cubic curve */
+        int curve = (velocity * velocity * velocity) / (127 * 127);
+
+        return curve;
 }
 
 void opcontrol() {
@@ -116,13 +147,15 @@ void opcontrol() {
                         piston_state = !piston_state;
                         piston.set_value(piston_state);
                 }
-                
+
                 toggle = master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2);
 
                 intake_mg.move(master.get_digital(DIGITAL_A) * INTAKE_SPEED);
 
-                left_mg.move(leftmove);                                 // Sets left motor voltage
-                right_mg.move(rightmove);                               // Sets right motor voltage
+                get_controller_input(&leftmove, &rightmove);
+
+                left_mg.move(curve_velocity(leftmove));                                 // Sets left motor voltage
+                right_mg.move(curve_velocity(rightmove));                               // Sets right motor voltage
 
                 pros::delay(LOOP_DELAY);                                // Run for ``loop_delay`` ms then update
         }
