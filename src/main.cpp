@@ -79,9 +79,15 @@ void competition_initialize() {}
 
 
 void autonomous() {
-        left_mg.move(1);
-        right_mg.move(-1);
-        pros::delay(1000);
+        constexpr float ratio = 20.42035224;
+        constexpr int runtime = 3000;
+
+        leftmove = 127;
+        rightmove = -127;
+        left_mg.move(leftmove * ratio);
+        right_mg.move(rightmove * ratio);
+
+        pros::delay(runtime);
 }
 
 /**
@@ -141,6 +147,8 @@ int curve_velocity(int velocity) {
 
 void opcontrol() {
         constexpr int LOOP_DELAY = 20;
+
+        autonomous();
 
         while (true) {
                 if (master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2) && !toggle) {
