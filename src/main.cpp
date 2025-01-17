@@ -2,7 +2,7 @@
 
 #define GAME_CONTROLLER_STYLE 0
 
-constexpr float INTAKE_SPEED = 50;
+constexpr int INTAKE_SPEED = -100;
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
@@ -117,7 +117,7 @@ void get_controller_input(int *leftmove, int *rightmove) {
         *leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
         *rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
         #else
-        constexpr float ACCEL_OFFSET = 0.5;
+        constexpr float ACCEL_OFFSET = 0.3;
 
         int vel = master.get_analog(ANALOG_LEFT_Y);
         int rad = master.get_analog(ANALOG_RIGHT_X);
@@ -148,13 +148,18 @@ int curve_velocity(int velocity) {
 void opcontrol() {
         constexpr int LOOP_DELAY = 20;
 
-        autonomous();
-
         while (true) {
                 if (master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2) && !toggle) {
                         piston_state = !piston_state;
-                        piston.set_value(piston_state);
+                        if (piston_state) {
+                                pros::lcd::set_text(2, "Piston: 1");
+                        } else {
+                                pros::lcd::set_text(2, "Piston: 0");
+                        }
+                        
                 }
+
+                piston.set_value(piston_state);
 
                 toggle = master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2);
 
