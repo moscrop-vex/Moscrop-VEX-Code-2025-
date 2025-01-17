@@ -2,7 +2,7 @@
 
 #define GAME_CONTROLLER_STYLE 0
 
-constexpr unsigned int INTAKE_SPEED = 50;
+constexpr float INTAKE_SPEED = 50;
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
@@ -10,7 +10,7 @@ pros::adi::DigitalOut piston('H');                      // ADI port of Solenoid
 pros::MotorGroup left_mg({1, 2, 3});                    // L motor smart ports
 pros::MotorGroup right_mg({4, 5, 6});                   // R motor smart ports
 
-pros::MotorGroup intake_mg({8, 9});
+pros::MotorGroup intake_mg({8});
 
 bool piston_state = false;                              // true = extended
 int leftmove, rightmove;                                // Motor angular offset (?)
