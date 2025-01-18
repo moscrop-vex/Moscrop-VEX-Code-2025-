@@ -1,10 +1,10 @@
 #include "main.h"
 
-#define GAME_CONTROLLER_STYLE 0
+#define GAME_CONTROLLER_STYLE 0                         // 0 = game controller; 1 = hemisphere
+constexpr int INTAKE_SPEED = -80;
+constexpr int AUTONOMOUS_STAGE_RUNTIME = 2000;
 
-constexpr int INTAKE_SPEED = -100;
-
-pros::Controller master(pros::E_CONTROLLER_MASTER);
+pros::Controller master(pros::E_CONTROLLER_MASTER);     // Sets controller
 
 pros::adi::DigitalOut piston('H');                      // ADI port of Solenoid
 pros::MotorGroup left_mg({1, 2, 3});                    // L motor smart ports
@@ -14,7 +14,7 @@ pros::MotorGroup intake_mg({8});
 
 bool piston_state = false;                              // true = extended
 int leftmove, rightmove;                                // Motor angular offset (?)
-bool toggle = false;
+bool toggle = false;                                    // Auxiliary variable for debouncing piston actuation
 
 /**
  * A callback function for LLEMU's center button.
@@ -80,14 +80,13 @@ void competition_initialize() {}
 
 void autonomous() {
         constexpr float ratio = 20.42035224;
-        constexpr int runtime = 3000;
 
         leftmove = 127;
         rightmove = -127;
         left_mg.move(leftmove * ratio);
         right_mg.move(rightmove * ratio);
 
-        pros::delay(runtime);
+        pros::delay(AUTONOMOUS_STAGE_RUNTIME);
 }
 
 /**
@@ -117,14 +116,16 @@ void get_controller_input(int *leftmove, int *rightmove) {
         *leftmove = -master.get_analog(ANALOG_LEFT_Y);           // Gets amount forward/backward from left joystick
         *rightmove = master.get_analog(ANALOG_RIGHT_Y);          // Gets the turn left/right from right joystick
         #else
-        constexpr float ACCEL_OFFSET = 0.3;
+        constexpr float ACCEL_OFFSET = 0.3;                             // Sets modifier for how much to turn
 
         int vel = master.get_analog(ANALOG_LEFT_Y);
         int rad = master.get_analog(ANALOG_RIGHT_X);
 
-        *leftmove = -(vel + rad * ACCEL_OFFSET);
+        *leftmove = -(vel + rad * ACCEL_OFFSET); // Get velocity based on l/r joysticks
         *rightmove = vel - rad * ACCEL_OFFSET;
 
+
+        // Code to avoid exceeding 127 in analog motor input
         if (abs(*leftmove) > 127) {
                 *rightmove = (*rightmove * 127) / abs(*leftmove);
                 *leftmove = 127 * sign(*leftmove);
@@ -149,21 +150,16 @@ void opcontrol() {
         constexpr int LOOP_DELAY = 20;
 
         while (true) {
-                if (master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2) && !toggle) {
+                if (master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2) && !toggle) { // Only if input has changed
                         piston_state = !piston_state;
-                        if (piston_state) {
-                                pros::lcd::set_text(2, "Piston: 1");
-                        } else {
-                                pros::lcd::set_text(2, "Piston: 0");
-                        }
-                        
+                        piston.set_value(piston_state);
                 }
-
-                piston.set_value(piston_state);
 
                 toggle = master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2);
 
-                intake_mg.move(master.get_digital(DIGITAL_A) * INTAKE_SPEED);
+                if (master.get_digital(DIGITAL_A)) {
+                        intake_mg.move(INTAKE_SPEED);
+                }
 
                 get_controller_input(&leftmove, &rightmove);
 
