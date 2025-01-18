@@ -1,8 +1,8 @@
 #include "main.h"
 
-#define GAME_CONTROLLER_STYLE 0                         // 0 = game controller; 1 = hemisphere
+#define GAME_CONTROLLER_STYLE 1                         // 0 = game controller; 1 = hemisphere
 constexpr int INTAKE_SPEED = -80;
-constexpr int AUTONOMOUS_STAGE_RUNTIME = 2000;
+constexpr int AUTONOMOUS_STAGE_RUNTIME = 1000;
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);     // Sets controller
 
@@ -159,6 +159,10 @@ void opcontrol() {
 
                 if (master.get_digital(DIGITAL_A)) {
                         intake_mg.move(INTAKE_SPEED);
+                } else if (master.get_digital(DIGITAL_B)) {
+                        intake_mg.move(-INTAKE_SPEED);
+                } else {
+                        intake_mg.move(0);
                 }
 
                 get_controller_input(&leftmove, &rightmove);
