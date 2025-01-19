@@ -87,6 +87,8 @@ void autonomous() {
         right_mg.move(rightmove * ratio);
 
         pros::delay(AUTONOMOUS_STAGE_RUNTIME);
+        left_mg.move(0);
+        right_mg.move(0);
 }
 
 /**
@@ -157,7 +159,7 @@ void opcontrol() {
 
                 toggle = master.get_digital(DIGITAL_R2) && master.get_digital(DIGITAL_L2);
 
-                if (master.get_digital(DIGITAL_A)) {
+                if (master.get_digital(DIGITAL_A)) {                                    // Sets reverse, forward, motionless
                         intake_mg.move(INTAKE_SPEED);
                 } else if (master.get_digital(DIGITAL_B)) {
                         intake_mg.move(-INTAKE_SPEED);
